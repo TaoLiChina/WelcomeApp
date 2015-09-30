@@ -1,0 +1,47 @@
+1.在本地创建文件（主要指文本文件）后，一定要通过git的命令向本地仓库添加。
+	$ git add 文件名.后缀                                  //添加文件
+	$ git commit -m "此处应该是提交的内容说明，作为提醒"   //提交文件
+	
+2.使用git最大的用处是版本管理，也就是过去和现在的查看可以在一处处理。
+  因此可以查看状态。
+	$ git status                  //查看此仓库各种状态
+	$ git diff 文件名.后缀        //查看这个文件修改了那些地方
+	$ git log  (--pretty=oneline) //获得提交记录，可以查看曾经谁对哪个文件做了什么样的改动
+	$ git reflog                  //获取历史命令记录
+	$ git reset  --hard 版本号    //去向某个版本(版本号为一串数字，经过hash计算得来，可以通过git log命令查看)
+	
+3.对文件修改的撤销
+	$ git checkout -- 文件名.后缀     //在未提交前，撤销最近一次的修改
+	$ git reset HEAD 文件名.后缀      //在提交后，撤销最近一次的修改
+	$ git rm 文件名.后缀              //删除文件
+	
+4.从远程仓库关联
+    $ git clone git@github.com:用户名/项目名.git  //本次用户名和项目名：TaoLiChina/WelcomeApp
+	或者$ git clone https://github.com/TaoLiChina/WelcomeApp.git
+	
+5.从远程仓库获得仓库内容
+    $ git pull origin 远程分支名:本地分支名  //获取远端分支并与本地分支合并
+	$ git push origin 本地分支名:远程分支名  //将本地分支推向远端分支
+
+6.创建分支并切换
+	$ git checkout -b 分支名            //创建分支并切换
+	$ git branch  分支名                //创建分支
+	$ git checkout  分支名              //切换分支
+	$ git branch -d 分支名              //删除分支
+	$ git branch                        //查看所有分支
+	
+7.分支的合并并解决冲突
+	$ git merge 分支名                //将分支合并到当前分支，此过程可能需要解决冲突
+	解决冲突就是要解决两个分支中有不一样的地方，如果都是自己改动的，可以自己解决
+	如果还有他人参与修改，则需要与他人商量修改之处，切记
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
