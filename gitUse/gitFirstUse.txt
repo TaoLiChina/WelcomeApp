@@ -1,0 +1,24 @@
+
+下载：msysgit是Windows版的Git，从http://msysgit.github.io/下载，然后按默认选项安装即可。
+注册：在github.com上注册自己的用户名
+产生本地ssh：
+			$ ssh-keygen -t rsa -C “此处为注册的邮件地址”
+			按3个回车，密码为空。
+			最后得到了两个文件：id_rsa和id_rsa.pub
+			将id_rsa.pub中序列发送给我，QQ：1192884489
+与远端仓库关联步骤：
+
+//克隆远程仓库,在本地空白文件夹下
+    git clone git@github.com:TaoLiChina/WelcomeApp.git
+//在已克隆的仓库下使用
+	git checkout welcomeapp_v1
+	git pull
+	git checkout -b 分支名      //这里分支名格式为：自己姓名_分支模块名_第几次修改，比如：taoli_welcomeActivity_1
+	git add --all
+	git commit -am "description"
+	git push origin 分支名
+//模块未完成前不需要和welcomeapp_v1合并，不需要执行以下步骤
+	git checkout welcomeapp_v1
+	git pull
+	git merge 分支名 --no-ff
+	git status
